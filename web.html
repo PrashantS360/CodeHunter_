@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/4ef41755ef.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <title>CodeHunter | Safari of Coding Jungle</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+            *{
+                font-family: 'Baloo Bhai 2', cursive;
+            }
+    
+            .navbar{
+              box-shadow: 3px 3px 20px lightgrey;
+            }
+            
+            .cheatsheet li{
+                margin-top: 5vh;
+                margin-bottom: 5vh;
+            }
+    
+            .toolbar-item button, .toolbar-item >span{
+                cursor: pointer !important;
+                color: white !important;
+                border-radius: 5px  !important;
+                padding: 0px 5px !important;
+                margin: 0 3px !important;
+                font-size: 1rem !important;
+                /* border: 3px solid white; */
+            }
+
+            .cheatsheet h2{
+                color: rgb(145, 60, 0);
+            }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+           <a class="navbar-brand d-flex align-items-center" href="/CodeHunter_/">
+            <i class="fa fa-free-code-camp fa-2x"></i>
+             <b style="margin-left: 5px;">CodeHunter</b>
+           </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: 1.1rem;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/CodeHunter_/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/CodeHunter_/about.html">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle  active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Learn and Practice
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="/CodeHunter_/cpp.html">C++</a></li>
+                      <li><a class="dropdown-item" href="/CodeHunter_/python.html">Python</a></li>
+                      <li><a class="dropdown-item active" href="/CodeHunter_/web.html">Web Development</a></li>
+                      <li><a class="dropdown-item" href="/CodeHunter_/js.html">JavaScript</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/CodeHunter_/android.html">Other..</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                    <button type="submit" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#contact">
+                        Contact us
+                      </button>
+                </li>
+        </ul>
+        <form class="d-flex align-items-center my-1">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+</nav>
+
+<div class="my-5 container" style="height: 0.1vh;"></div>
+<div class="container my-3" style="width: 80%; border-radius: 50px;">
+    <div class="card">
+        <img src="img/webdev.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+
+          <!-- Online IDE -->
+            <div>
+              <h2 style="color: rgb(0, 55, 173);">Web Development</h2>
+              <a href="https://www.jdoodle.com/html-css-javascript-online-editor/" target="_blank"> <button class="btn btn-outline-danger">HTML/CSS/JS IDE</button></a>   
+            </div>
+            <p class="card-text">Web development is the work involved in developing a Web site for the Internet (World Wide Web) or an intranet (a private network).Web development can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services. A more comprehensive list of tasks to which Web development commonly refers, may include Web engineering, Web design, Web content development, client liaison, client-side/server-side scripting, Web server and network security configuration, and e-commerce development.
+
+                Among Web professionals, "Web development" usually refers to the main non-design aspects of building Web sites: writing markup and coding.Web development may use content management systems (CMS) to make content changes easier and available with basic technical skills.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container my-3 d-flex justify-content-center">
+    <ol class="cheatsheet" style="width: 70vw;">
+        <h2>HTML </h2>
+        <li><h5> Emmet</h5><pre class="language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></li>
+
+        <li><h5>Headings in HTML</h5><pre class="language-html"><code>&lt;h1&gt;This is heading1&lt;/h1&gt;
+&lt;h2&gt;This is heading2&lt;/h2&gt;
+&lt;h3&gt;This is heading3&lt;/h3&gt;
+&lt;h4&gt;This is heading4&lt;/h4&gt;
+&lt;h5&gt;This is heading5&lt;/h5&gt;
+&lt;h6&gt;This is heading6&lt;/h6&gt;</code></pre></li>
+
+        <li><h5> Paragraphs</h5><pre class="language-html"><code>&lt;p&gt;This is paragraph&lt;/p&gt;</code></pre></li>
+        <li><h5> Comments in HTML</h5><pre class="language-html"><code>&lt;!-- HTML Comments --&gt;</code></pre></li>
+        <li><h5> HTML Links</h5><pre class="language-html"><code>&lt;a href="https:google.com"&gt;This is a link&lt;/a&gt;</code></pre></li>
+    </ol>
+</div>
+
+<div class="modal fade" id="contact" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Contact to CodeHunter</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <i class="fa fa-user"> </i>
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <i class="fa fa-envelope"> </i>
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <i class="fa fa-phone"> </i>
+              <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+              <input type="number" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp">
+              <div id="phoneHelp" class="form-text">We'll never share your number with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <i class="fa fa-comment"> </i>
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="20" rows="5" class="form-control"></textarea>
+            </div>
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/CodeHunter_/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <i class="fa fa-free-code-camp fa-2x"></i>
+            </a>
+            <span class="text-muted">© CodHunter.com | 2021-2030</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" style="font-size: 1.5rem;">
+            <li class="ms-3"><a class="text-muted" href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></li>
+            <li class="ms-3"><a class="text-muted" href="https://instagram.com" target="_blank">	
+                <i class="fa fa-instagram"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+          </ul>
+        </footer>
+      </div>
+</footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script> -->
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
