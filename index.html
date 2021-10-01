@@ -19,9 +19,37 @@
       font-family: 'Baloo Bhai 2', cursive;
     }
 
+    html{
+      scroll-behavior: smooth;
+    }
+
     .navbar {
       box-shadow: 3px 3px 20px lightgrey;
     }
+
+    #userDet{
+      animation: profile 0.8s linear;
+    }
+
+
+    @keyframes profile {
+      0%{
+        opacity: 0;
+      }
+      25%{
+        opacity: 0.25;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      75%{
+        opacity: 0.75;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
+    
   </style>
 
 </head>
@@ -61,19 +89,23 @@
           </ul>
           </li>
           <li class="nav-item">
-            <button type="submit" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#contact">
+            <button id="cont" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contact" onclick="register()">
               Contact us
+            </button>
+            <button id="sign" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signin" onclick="signin()">
+              Sign In
             </button>
           </li>
         </ul>
         <form class="d-flex align-items-center">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
-
+  
+  
   <div id="carouselExampleCaptions" class="carousel slide carousel-fade my-5" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -138,18 +170,18 @@
             <div class="mb-3">
               <i class="fa fa-user"> </i>
               <label for="exampleInputEmail1" class="form-label">Name</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3">
               <i class="fa fa-envelope"> </i>
               <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" required>
               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
               <i class="fa fa-phone"> </i>
               <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
-              <input type="number" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp">
+              <input type="number" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" required>
               <div id="phoneHelp" class="form-text">We'll never share your number with anyone else.</div>
             </div>
             <div class="mb-3">
@@ -157,12 +189,51 @@
               <label for="message">Message</label>
               <textarea name="message" id="message" cols="20" rows="5" class="form-control"></textarea>
             </div>
-            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+            <div class="modal-footer d-flex justify-content-evenly">
+              <button type="reset" class="btn btn-secondary" style="width: 45%;">Reset</button>
+              <button type="submit" class="btn btn-primary" style="width: 45%;">Submit</button>
+            </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SignIn Modal  -->
+  <div class="modal fade" id="signin" tabindex="-1" aria-labelledby="signin" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a href="/CodeHunter_/" style="color: orange;">
+            <i class="fa fa-free-code-camp fa-3x"></i> 
+          </a>
+          <div  style="text-align: center; width: 75%;">
+            <h3 class="modal-title" id="signinModalLabel"><b>Sign In</b></h3>
+            <a id="signup" href="#">New user? Register here</a>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="background-color:rgb(246, 246, 246);">
+          <form>
+            <div class="form-floating">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" autocomplete="username" required>
+              <label for="floatingInput">Email address</label>
+            </div> <br>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="current-password" required>
+              <label for="floatingPassword" >Password</label>
+            </div> <br>
+        
+            <div class="checkbox mb-3" style="text-align: center;">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" type="submit" onclick="checkData()" style="width: 100%;" id="login" data-bs-dismiss="modal">Login</button>
+              <button class="btn btn-primary" type="submit" onclick="saveData()" style="width: 100%;" id="register" data-bs-dismiss="modal">Sign Up</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -254,9 +325,29 @@
     </div>
   </div>
 
-
-  <footer>
-    <div class="container">
+  <div id="userInfo" class="text-center m-auto" style="background-color: white;">
+    <div class="d-flex align-items-center justify-content-center">
+      <img src="img/user.png" alt="user pic" width="50vw" height="50vw"
+       style="cursor: pointer;border-radius: 50px;" id="userImg" >
+      <div class="card text-center"  id="userDet">
+        <div class="card-header">
+          Your Profile
+        </div>
+        <div class="card-body">
+          <form class="d-flex align-items-center" id="setProfile">
+            <input class="form-control me-2" type="text" placeholder="Username" id="username">
+            <button class="btn btn-success" type="submit" onclick="profile()" style="font-size: 1rem;">Save</button>
+          </form>
+          <div style="margin-top: 5px;">
+            <a href="#" class="btn btn-outline-danger" onclick="signOut()">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <footer>
+      <div class="container">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
           <a href="/CodeHunter_/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
@@ -289,7 +380,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
     integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
     crossorigin="anonymous"></script>
-
+    <script src="app.js"></script>
 </body>
 
 </html>

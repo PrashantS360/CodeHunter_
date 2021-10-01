@@ -79,14 +79,17 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                    <button type="submit" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#contact">
-                        Contact us
-                      </button>
+                  <button id="cont" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contact" onclick="register()">
+                    Contact us
+                  </button>
+                  <button id="sign" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signin" onclick="signin()">
+                    Sign In
+                  </button>
                 </li>
         </ul>
         <form class="d-flex align-items-center my-1">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
     </div>
 </div>
@@ -162,47 +165,87 @@ while (i &lt; 10) {
     </ol>
 </div>
 
+<!--Contact Modal -->
 <div class="modal fade" id="contact" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="contactModalLabel">Contact to CodeHunter</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Contact to CodeHunter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <i class="fa fa-user"> </i>
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          </div>
+          <div class="mb-3">
+            <i class="fa fa-envelope"> </i>
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" required>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <i class="fa fa-phone"> </i>
+            <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+            <input type="number" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" required>
+            <div id="phoneHelp" class="form-text">We'll never share your number with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <i class="fa fa-comment"> </i>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="20" rows="5" class="form-control"></textarea>
+          </div>
+          <div class="modal-footer d-flex justify-content-evenly">
+            <button type="reset" class="btn btn-secondary" style="width: 45%;">Reset</button>
+            <button type="submit" class="btn btn-primary" style="width: 45%;">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SignIn Modal  -->
+<div class="modal fade" id="signin" tabindex="-1" aria-labelledby="signin" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a href="/CodeHunter_/" style="color: orange;">
+          <i class="fa fa-free-code-camp fa-3x"></i> 
+        </a>
+        <div  style="text-align: center; width: 75%;">
+          <h3 class="modal-title" id="signinModalLabel"><b>Sign In</b></h3>
+          <a id="signup" href="#">New user? Register here</a>
         </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <i class="fa fa-user"> </i>
-              <label for="exampleInputEmail1" class="form-label">Name</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <i class="fa fa-envelope"> </i>
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <i class="fa fa-phone"> </i>
-              <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
-              <input type="number" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp">
-              <div id="phoneHelp" class="form-text">We'll never share your number with anyone else.</div>
-            </div>
-            <div class="mb-3">
-                <i class="fa fa-comment"> </i>
-                <label for="message">Message</label>
-                <textarea name="message" id="message" cols="20" rows="5" class="form-control"></textarea>
-            </div>
-            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background-color:rgb(246, 246, 246);">
+        <form>
+          <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" autocomplete="username" required>
+            <label for="floatingInput">Email address</label>
+          </div> <br>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="current-password" required>
+            <label for="floatingPassword" >Password</label>
+          </div> <br>
+      
+          <div class="checkbox mb-3" style="text-align: center;">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="submit" onclick="checkData()" style="width: 100%;" id="login" data-bs-dismiss="modal">Login</button>
+            <button class="btn btn-primary" type="submit" onclick="saveData()" style="width: 100%;" id="register" data-bs-dismiss="modal">Sign Up</button>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>
   </div>
+</div>
 
   <footer>
     <div class="container">
@@ -236,7 +279,7 @@ while (i &lt; 10) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
         integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
         crossorigin="anonymous"></script>
-
+        <script src="app.js"></script>
 </body>
 
 </html>
